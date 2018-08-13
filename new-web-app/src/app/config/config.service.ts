@@ -12,10 +12,10 @@ export class ConfigService {
   config: Observable<Config[]>;
 
   constructor(private httpClient: HttpClient) { }
-  
+
   ensureConfig(): Observable<Config[]> {
     if (!this.config) {
-      this.config = this.httpClient.get("http://localhost:50538/api/strangler/config").pipe(
+      this.config = this.httpClient.get('http://localhost:50538/api/strangler/config').pipe(
         map((res: object) => Object.entries(res).map(([key, value]: any) => new Config(key, value)))
       );
     }
@@ -28,6 +28,6 @@ export class ConfigService {
   }
 
   getLegacyLinks(id: number): Observable<LegacyLinks> {
-    return this.getConfig("legacy::app").pipe(map((config: Config) => new LegacyLinks(config[0].Value, id)));
+    return this.getConfig('legacy::app').pipe(map((config: Config) => new LegacyLinks(config[0].Value, id)));
   }
 }

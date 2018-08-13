@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../user';
 import { LegacyLinks, ConfigService } from 'src/app/config';
 import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-item',

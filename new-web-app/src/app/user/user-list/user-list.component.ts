@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class UserListComponent implements OnInit {
   users: Observable<User[]>;
 
-  constructor(private userService: UserService) { 
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
