@@ -1,0 +1,17 @@
+hr {
+    width: 100%;
+}
+
+.table{
+	display: table;
+	width: 100%;
+}
+
+.table-head{
+	display: table-cell;
+	font-weight: bold;
+}
+
+.table-body{
+	display: table-row-group;
+}

@@ -1,0 +1,16 @@
+<h2>Details</h2>
+
+<p>
+    <a href="/User/Create">Create New</a>
+</p>
+<div class="table">
+
+    <div class="table">
+        <div class="table-head">
+            <div>Name</div>
+            <div></div>
+        </div>
+        <app-user-item class="table-body" *ngFor="let user of users | async" [user]="user"></app-user-item>
+    </div>
+
+</div>

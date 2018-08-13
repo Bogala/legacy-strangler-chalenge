@@ -40,9 +40,9 @@ namespace legacy_business_logic.Services
         public void InitApp()
         {
             int i = 0;
-            _userRepository.AddUser(new User() { Id = ++i, Name = "David", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
-            _userRepository.AddUser(new User() { Id = ++i, Name = "Jean Paul", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
-            _userRepository.AddUser(new User() { Id = ++i, Name = "Gonzague", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
+            AddUser(new User() { Id = ++i, Name = "David", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
+            AddUser(new User() { Id = ++i, Name = "Jean Paul", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
+            AddUser(new User() { Id = ++i, Name = "Gonzague", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
         }
         
         public void AddUser(User user)

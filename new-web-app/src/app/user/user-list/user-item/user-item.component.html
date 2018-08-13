@@ -1,0 +1,13 @@
+
+<div class="table-row">
+  <div class="table-cell">
+    <hr>
+    <span [textContent]="user.Name"></span>
+  </div>
+  <div class="table-cell">
+    <hr>
+    <a [href]="(legacyLinks | async)?.EditLink">Edit</a> |
+    <a [href]="(legacyLinks | async)?.DetailsLink">Details</a> |
+    <a [href]="(legacyLinks | async)?.DeleteLink">Delete</a>
+  </div>
+</div>
