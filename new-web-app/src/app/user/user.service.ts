@@ -12,7 +12,7 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    return this.httpClient.get('http://localhost:50538/api/user').pipe(
+    return this.httpClient.get('http://localhost/new-web-api/api/user').pipe(
       map((res: any) => res.map(user => new User(user.id, user.name)))
     );
   }
