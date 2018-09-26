@@ -1,8 +1,6 @@
-﻿using legacy_business_logic.Services;
-
+﻿using legacy_business_logic.Entities;
+using legacy_business_logic.Services;
 using System.Web.Mvc;
-
-using legacy_business_logic.Entities;
 
 namespace legacy_web_app.Controllers
 {
@@ -10,7 +8,7 @@ namespace legacy_web_app.Controllers
     {
         private readonly IUserService _userService;
 
-        public UserController() 
+        public UserController()
             : this(new UserService())
         {
         }
@@ -23,7 +21,6 @@ namespace legacy_web_app.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return this.Redirect(this.LegacyStranglerConfig.NewApp);
             var model = _userService.GetAll();
             return View(model);
         }
