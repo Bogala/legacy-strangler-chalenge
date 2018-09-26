@@ -15,6 +15,6 @@ export class UserItemComponent implements OnInit {
   constructor(private configService: ConfigService) { }
 
   ngOnInit() {
-    this.legacyLinks = this.configService.getLegacyLinks(this.user.Id);
+    this.legacyLinks = this.configService.getLegacyLinks(this.user.id);
   }
 }

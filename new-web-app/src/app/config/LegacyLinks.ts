@@ -1,11 +1,11 @@
 export class LegacyLinks {
-    public EditLink: string;
-    public DetailsLink: string;
-    public DeleteLink: string;
+    public editLink: string;
+    public detailsLink: string;
+    public deleteLink: string;
 
     constructor(id: number) {
-        this.EditLink = `User/Edit/${id}`;
-        this.DetailsLink = `User/Details/${id}`;
-        this.DeleteLink = `User/Delete/${id}`;
+        this.editLink = `User/Edit/${id}`;
+        this.detailsLink = `User/Details/${id}`;
+        this.deleteLink = `User/Delete/${id}`;
     }
 }

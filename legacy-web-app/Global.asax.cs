@@ -11,7 +11,6 @@ namespace legacy_web_app
     {
         protected void Application_Start()
         {
-            new UserService().InitApp();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

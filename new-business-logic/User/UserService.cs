@@ -21,14 +21,6 @@ namespace new_business_logic.User
             _userRepository = userRepository;
         }
 
-        public void InitApp()
-        {
-            int i = 0;
-            _userRepository.AddUser(new User() { Id = ++i, Name = "David" });
-            _userRepository.AddUser(new User() { Id = ++i, Name = "Jean Paul" });
-            _userRepository.AddUser(new User() { Id = ++i, Name = "Gonzague" });
-        }
-
         public IReadOnlyCollection<User> GetAll()
         {
             return _userRepository.GetAll();

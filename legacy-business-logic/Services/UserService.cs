@@ -37,14 +37,7 @@ namespace legacy_business_logic.Services
             _socialReferentialProvider = socialReferentialProvider;
         }
 
-        public void InitApp()
-        {
-            int i = 0;
-            AddUser(new User() { Id = ++i, Name = "David", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
-            AddUser(new User() { Id = ++i, Name = "Jean Paul", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
-            AddUser(new User() { Id = ++i, Name = "Gonzague", SocialIdentifier = "".PadLeft(6, i.ToString()[0]) });
-        }
-        
+       
         public void AddUser(User user)
         {
             SocialIdentifierValidator.Validate(user.SocialIdentifier);
