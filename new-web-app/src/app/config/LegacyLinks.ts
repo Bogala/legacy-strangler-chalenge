@@ -3,9 +3,9 @@ export class LegacyLinks {
     public DetailsLink: string;
     public DeleteLink: string;
 
-    constructor(baseUrl: string, id: number) {
-        this.EditLink = `${baseUrl}User/Edit/${id}`;
-        this.DetailsLink = `${baseUrl}User/Details/${id}`;
-        this.DeleteLink = `${baseUrl}User/Delete/${id}`;
+    constructor(id: number) {
+        this.EditLink = `User/Edit/${id}`;
+        this.DetailsLink = `User/Details/${id}`;
+        this.DeleteLink = `User/Delete/${id}`;
     }
 }

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class UserItemComponent implements OnInit {
   @Input()  user: User;
-  legacyLinks: Observable<LegacyLinks>;
+  legacyLinks: LegacyLinks;
 
   constructor(private configService: ConfigService) { }
 
