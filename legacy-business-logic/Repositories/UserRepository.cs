@@ -11,8 +11,6 @@ namespace legacy_business_logic.Repositories
     {
         void AddUser(User user);
 
-        IReadOnlyCollection<User> GetAll();
-
         User GetUserById(int id);
 
         void UpdateUser(User user);
@@ -48,12 +46,6 @@ namespace legacy_business_logic.Repositories
             user.Id = user.Id == 0 ? _users.Count + 1 : user.Id;
             _users.Add(user);
             Save(_users);
-        }
-
-        public IReadOnlyCollection<User> GetAll()
-        {
-            var _users = Load();
-            return _users;
         }
 
         public User GetUserById(int id)

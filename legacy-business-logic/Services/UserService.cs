@@ -5,6 +5,9 @@ using legacy_business_logic.Providers;
 using legacy_business_logic.Repositories;
 using legacy_business_logic.Validators;
 
+using INewUserRepository = new_business_logic.User.IUserRepository;
+using NewUserRepository = new_business_logic.User.UserRepository;
+
 namespace legacy_business_logic.Services
 {
     public interface IUserService
@@ -15,7 +18,7 @@ namespace legacy_business_logic.Services
 
         EnrichedUser GetEnrichedUserById(int userId);
 
-        IReadOnlyCollection<User> GetAll();
+        object GetAll();
 
         void UpdateUser(User model);
     }
@@ -24,16 +27,19 @@ namespace legacy_business_logic.Services
     {
         private readonly IUserRepository _userRepository;
 
+        private readonly INewUserRepository _newUserRepository;
+
         private readonly ISocialReferentialProvider _socialReferentialProvider;
 
-        public UserService() 
-            : this(new UserRepository(), new SocialReferentialProvider())
+        public UserService()
+            : this(new UserRepository(), new NewUserRepository(), new SocialReferentialProvider())
         {
         }
 
-        public UserService(IUserRepository userRepository, ISocialReferentialProvider socialReferentialProvider)
+        public UserService(IUserRepository userRepository, INewUserRepository newUserRepository, ISocialReferentialProvider socialReferentialProvider)
         {
             _userRepository = userRepository;
+            _newUserRepository = newUserRepository;
             _socialReferentialProvider = socialReferentialProvider;
         }
 
@@ -44,9 +50,9 @@ namespace legacy_business_logic.Services
             _userRepository.AddUser(user);
         }
 
-        public IReadOnlyCollection<User> GetAll()
+        public object GetAll()
         {
-            return _userRepository.GetAll();
+            return _newUserRepository.GetAll();
         }
 
         public void UpdateUser(User user)

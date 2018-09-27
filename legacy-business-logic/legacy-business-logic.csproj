@@ -58,5 +58,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\new-business-logic\new-business-logic.csproj">
+      <Project>{19091a69-8720-4156-a480-11b7e7db248a}</Project>
+      <Name>new-business-logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
